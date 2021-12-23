@@ -1,16 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    @foreach ($model as $movie)
-        <div>
-            <p>questo è l'id: <span>{{ $movie->id }}</span></p>
+@extends('layout.base_layout')
+
+@section('main')
+<main>
+
+    <div class="movies_container">
+
+        {{-- @dump($model) --}}
+        
+        @foreach ($model as $movie)
+        
+        <div class="card_container">
+            <div class="single_card">
+                <div class="text_container">
+                    <h1>{{ $movie->title }}</h1>
+                    <ul>
+                        <li>titolo originale: <strong>{{ $movie->original_title }}</strong></li>
+                        <li>nazionalità: <strong>{{ $movie->nationality }}</strong> </li>
+                        <li>anno di uscita: <strong>{{ $movie->date }}</strong> </li>
+                        <li>voto: <strong>{{ $movie->vote }}</strong> </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    @endforeach
-</body>
-</html>
+        @endforeach
+    </div>
+
+</main>
+@endsection

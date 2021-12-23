@@ -1,0 +1,19 @@
+.movies_container{
+    background-color: lightblue;
+    padding: 50px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    
+    .card_container{
+        width: calc(100% / 5 - 20px);
+        
+        .single_card{
+            background-color: lightcyan;
+
+            .text_container{
+                padding: 10px;
+            }
+        }
+    }
+}
